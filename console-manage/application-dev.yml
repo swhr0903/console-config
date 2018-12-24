@@ -49,4 +49,4 @@ eureka:
     serviceUrl:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@eureka-server:8011/eureka/
 logging:
-  config: file:logback-spring.xml
+  config: logback-spring.xml
