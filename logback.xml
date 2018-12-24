@@ -8,35 +8,53 @@
             <pattern>${CONSOLE_LOG_PATTERN}</pattern>
         </encoder>
     </appender>
-
-    <!-- 操作日志 -->
-    <property name="APP_LOG_PATH" value="logs/app"/>
+    
+    <!-- manage日志 -->
+    <property name="APP_LOG_PATH" value="logs/root"/>
     <appender name="app" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${APP_LOG_PATH}/root-%d{yyyy-MM-dd}.log</FileNamePattern>
-            <maxHistory>30</maxHistory>
-        </rollingPolicy>
+        <file>${LOGIN_LOG_PATH}/root-%d{yyyy-MM-dd}.log</file> 
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+             <fileNamePattern>${LOGIN_LOG_PATH}/root-%d{yyyy-MM-dd}.log.zip</fileNamePattern>  
+             <maxHistory>7</maxHistory>  
+             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">  
+                 <maxFileSize>10MB</maxFileSize>  
+             </timeBasedFileNamingAndTriggeringPolicy>  
+        </rollingPolicy>  
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
         </encoder>
-        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-            <MaxFileSize>10MB</MaxFileSize>
-        </triggeringPolicy>
+    </appender>
+
+    <!-- manage日志 -->
+    <property name="APP_LOG_PATH" value="logs/manage"/>
+    <appender name="app" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOGIN_LOG_PATH}/manage-%d{yyyy-MM-dd}.log</file> 
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+             <fileNamePattern>${LOGIN_LOG_PATH}/manage-%d{yyyy-MM-dd}.log.zip</fileNamePattern>  
+             <maxHistory>7</maxHistory>  
+             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">  
+                 <maxFileSize>10MB</maxFileSize>  
+             </timeBasedFileNamingAndTriggeringPolicy>  
+        </rollingPolicy>  
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
+        </encoder>
     </appender>
 
     <!-- 登录日志 -->
     <property name="LOGIN_LOG_PATH" value="logs/login"/>
     <appender name="login" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${LOGIN_LOG_PATH}/login-%d{yyyy-MM-dd}.log</FileNamePattern>
-            <maxHistory>30</maxHistory>
-        </rollingPolicy>
+        <file>${LOGIN_LOG_PATH}/login-%d{yyyy-MM-dd}.log</file> 
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+             <fileNamePattern>${LOGIN_LOG_PATH}/login-%d{yyyy-MM-dd}.log.zip</fileNamePattern>  
+             <maxHistory>7</maxHistory>  
+             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">  
+                 <maxFileSize>10MB</maxFileSize>  
+             </timeBasedFileNamingAndTriggeringPolicy>  
+        </rollingPolicy>  
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
         </encoder>
-        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-            <MaxFileSize>10MB</MaxFileSize>
-        </triggeringPolicy>
     </appender>
 
     <!-- error级别的日志 -->
