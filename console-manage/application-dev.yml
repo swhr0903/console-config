@@ -45,6 +45,6 @@ eureka:
       version: 0.0.1-SNAPSHOT
   client:
     serviceUrl:
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@127.0.0.1:8011/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@eureka-server:8011/eureka/
 logging:
   config: logback.xml
