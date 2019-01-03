@@ -1,8 +1,6 @@
 server:
   port: 8021
 spring:
-  application:
-    name: console-manage
   datasource:
     druid:
       filters: config,stat,wall
