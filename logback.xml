@@ -12,7 +12,7 @@
     <!-- root日志 -->
     <property name="ROOT_LOG_PATH" value="logs/root"/>
     <appender name="root" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${ROOT_LOG_PATH}/root-%d{yyyy-MM-dd}.log</file> 
+        <file>${ROOT_LOG_PATH}/root.log</file> 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
              <fileNamePattern>${ROOT_LOG_PATH}/root-%d{yyyy-MM-dd}-%i.log.zip</fileNamePattern>  
              <maxHistory>14</maxHistory>  
@@ -26,9 +26,9 @@
     </appender>
 
     <!-- manage日志 -->
-     <property name="MAMAGE_LOG_PATH" value="logs/manage"/>
+    <property name="MAMAGE_LOG_PATH" value="logs/manage"/>
     <appender name="manage" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${MAMAGE_LOG_PATH}/manage-%d{yyyy-MM-dd}.log</file> 
+        <file>${MAMAGE_LOG_PATH}/manage.log</file> 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
              <fileNamePattern>${LOGIN_LOG_PATH}/manage-%d{yyyy-MM-dd}-%i.log.zip</fileNamePattern>  
              <maxHistory>14</maxHistory>  
@@ -44,7 +44,7 @@
     <!-- 登录日志 -->
     <property name="LOGIN_LOG_PATH" value="logs/login"/>
     <appender name="login" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOGIN_LOG_PATH}/login-%d{yyyy-MM-dd}.log</file> 
+        <file>${LOGIN_LOG_PATH}/login.log</file> 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
              <fileNamePattern>${LOGIN_LOG_PATH}/login-%d{yyyy-MM-dd}-%i.log.zip</fileNamePattern>  
              <maxHistory>14</maxHistory>  
@@ -60,7 +60,7 @@
     <!-- error级别的日志 -->
     <property name="ERROR_LOG_PATH" value="logs/error"/>
     <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${ERROR_LOG_PATH}/error-%d{yyyy-MM-dd}.log</file> 
+        <file>${ERROR_LOG_PATH}/error.log</file> 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
              <fileNamePattern>${ERROR_LOG_PATH}/error-%d{yyyy-MM-dd}-%i.log.zip</fileNamePattern>  
              <maxHistory>14</maxHistory>  
