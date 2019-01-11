@@ -87,30 +87,35 @@
         <appender-ref ref="error"/>
     </appender>
 
-    <!--生产环境:打印控制台和输出到文件-->
-    <springProfile name="prod">
-        <root level="INFO">
-            <appender-ref ref="CONSOLE"/>
-            <appender-ref ref="asyncFileAppender"/>、
-            <appender-ref ref="app"/>
-            <appender-ref ref="login"/>
-        </root>
-    </springProfile>
-
     <!--开发、测试、生产环境:打印控制台-->
     <springProfile name="dev">
         <root level="INFO">
             <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="asyncFileAppender"/>、
+            <appender-ref ref="root"/>
+            <appender-ref ref="manage"/>
+            <appender-ref ref="login"/>
+            <appender-ref ref="erro"/>
         </root>
     </springProfile>
     <springProfile name="test">
         <root level="INFO">
             <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="asyncFileAppender"/>、
+            <appender-ref ref="root"/>
+            <appender-ref ref="manage"/>
+            <appender-ref ref="login"/>
+            <appender-ref ref="erro"/>
         </root>
     </springProfile>
     <springProfile name="prod">
         <root level="INFO">
             <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="asyncFileAppender"/>、
+            <appender-ref ref="root"/>
+            <appender-ref ref="manage"/>
+            <appender-ref ref="login"/>
+            <appender-ref ref="erro"/>
         </root>
     </springProfile>
 
