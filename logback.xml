@@ -8,66 +8,44 @@
             <pattern>${CONSOLE_LOG_PATTERN}</pattern>
         </encoder>
     </appender>
-    
-    <!-- root日志 -->
-    <property name="ROOT_LOG_PATH" value="logs/root"/>
-    <appender name="root" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${ROOT_LOG_PATH}/root.log</file> 
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
-             <fileNamePattern>${ROOT_LOG_PATH}/root-%d{yyyy-MM-dd}-%i.log.zip</fileNamePattern>  
-             <maxHistory>14</maxHistory>  
-             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">  
-                 <maxFileSize>50MB</maxFileSize>  
-             </timeBasedFileNamingAndTriggeringPolicy>  
-        </rollingPolicy>  
-        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
-        </encoder>
-    </appender>
 
-    <!-- manage日志 -->
-    <property name="MAMAGE_LOG_PATH" value="logs/manage"/>
-    <appender name="manage" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${MAMAGE_LOG_PATH}/manage.log</file> 
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
-             <fileNamePattern>${LOGIN_LOG_PATH}/manage-%d{yyyy-MM-dd}-%i.log.zip</fileNamePattern>  
-             <maxHistory>14</maxHistory>  
-             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">  
-                 <maxFileSize>50MB</maxFileSize>  
-             </timeBasedFileNamingAndTriggeringPolicy>  
-        </rollingPolicy>  
+    <!-- 操作日志 -->
+    <property name="APP_LOG_PATH" value="logs/app"/>
+    <appender name="app" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${APP_LOG_PATH}/app-%d{yyyy-MM-dd}.log</FileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
         </encoder>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>10MB</MaxFileSize>
+        </triggeringPolicy>
     </appender>
 
     <!-- 登录日志 -->
     <property name="LOGIN_LOG_PATH" value="logs/login"/>
     <appender name="login" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOGIN_LOG_PATH}/login.log</file> 
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
-             <fileNamePattern>${LOGIN_LOG_PATH}/login-%d{yyyy-MM-dd}-%i.log.zip</fileNamePattern>  
-             <maxHistory>14</maxHistory>  
-             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">  
-                 <maxFileSize>50MB</maxFileSize>  
-             </timeBasedFileNamingAndTriggeringPolicy>  
-        </rollingPolicy>  
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOGIN_LOG_PATH}/login-%d{yyyy-MM-dd}.log</FileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
         </encoder>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>10MB</MaxFileSize>
+        </triggeringPolicy>
     </appender>
 
     <!-- error级别的日志 -->
     <property name="ERROR_LOG_PATH" value="logs/error"/>
     <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${ERROR_LOG_PATH}/error.log</file> 
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
-             <fileNamePattern>${ERROR_LOG_PATH}/error-%d{yyyy-MM-dd}-%i.log.zip</fileNamePattern>  
-             <maxHistory>14</maxHistory>  
-             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">  
-                 <maxFileSize>50MB</maxFileSize>  
-             </timeBasedFileNamingAndTriggeringPolicy>  
-        </rollingPolicy>  
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${ERROR_LOG_PATH}/error-%d{yyyy-MM-dd}.log</FileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n</pattern>
         </encoder>
@@ -84,25 +62,11 @@
         <discardingThreshold>0</discardingThreshold>
         <queueSize>512</queueSize>
         <appender-ref ref="error"/>
-        <appender-ref ref="manage"/>
-        <appender-ref ref="root"/>
+        <appender-ref ref="app"/>
         <appender-ref ref="login"/>
     </appender>
 
-
-    <!--开发、测试、生产环境:打印控制台-->
-    <springProfile name="dev">
-        <root level="INFO">
-            <appender-ref ref="CONSOLE"/>
-            <appender-ref ref="asyncFileAppender"/>
-        </root>
-    </springProfile>
-    <springProfile name="test">
-        <root level="INFO">
-            <appender-ref ref="CONSOLE"/>
-            <appender-ref ref="asyncFileAppender"/>
-        </root>
-    </springProfile>
+    <!--生产环境:打印控制台和输出到文件-->
     <springProfile name="prod">
         <root level="INFO">
             <appender-ref ref="CONSOLE"/>
@@ -110,5 +74,13 @@
         </root>
     </springProfile>
 
-    <logger name="com.cloud.console.mapper" level="DEBUG"/>
+    <!--开发环境:打印控制台-->
+    <springProfile name="dev">
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="asyncFileAppender"/>
+        </root>
+    </springProfile>
+
+    <logger name="com.dxy.console.mapper" level="DEBUG"/>
 </configuration>
