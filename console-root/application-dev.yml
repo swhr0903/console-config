@@ -61,3 +61,11 @@ spring:
           starttls:
             enable: true
             required: true
+  security:
+    user:
+      name: frank
+      password: aa000000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8011/eureka/
