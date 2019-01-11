@@ -11,7 +11,7 @@
 
     <!-- 登录日志 -->
     <property name="LOGIN_LOG_PATH" value="logs/login"/>
-    <appender name="login" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="loginAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>${LOGIN_LOG_PATH}/login-%d{yyyy-MM-dd}.log</FileNamePattern>
             <maxHistory>30</maxHistory>
@@ -26,7 +26,7 @@
 
     <!-- root日志 -->
     <property name="ROOT_LOG_PATH" value="logs/root"/>
-    <appender name="root" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="rootAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>${ROOT_LOG_PATH}/root-%d{yyyy-MM-dd}.log</FileNamePattern>
             <maxHistory>30</maxHistory>
@@ -39,9 +39,9 @@
         </triggeringPolicy>
     </appender>
 
-    <!-- root日志 -->
+    <!-- manage日志 -->
     <property name="MANAGE_LOG_PATH" value="logs/manage"/>
-    <appender name="root" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="manageAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>${MANAGE_LOG_PATH}/manage-%d{yyyy-MM-dd}.log</FileNamePattern>
             <maxHistory>30</maxHistory>
