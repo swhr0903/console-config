@@ -29,7 +29,6 @@
     </appender>
 
     <!-- manage日志 -->
-    <property name="MAMAGE_LOG_PATH" value="logs/manage"/>
     <appender name="manage" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${MAMAGE_LOG_PATH}/manage-%d{yyyy-MM-dd}.log</file> 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
