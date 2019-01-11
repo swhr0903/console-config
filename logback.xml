@@ -11,9 +11,9 @@
     
     <!-- root日志 -->
     <property name="ROOT_LOG_PATH" value="logs/root"/>
-    <property name="MAMAGE_LOG_PATH" value="logs/root"/>
-    <property name="LOGIN_LOG_PATH" value="logs/root"/>
-    <property name="ERROR_LOG_PATH" value="logs/root"/>
+    <property name="MAMAGE_LOG_PATH" value="logs/manage"/>
+    <property name="LOGIN_LOG_PATH" value="logs/login"/>
+    <property name="ERROR_LOG_PATH" value="logs/error"/>
     <appender name="root" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${ROOT_LOG_PATH}/root-%d{yyyy-MM-dd}.log</file> 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
