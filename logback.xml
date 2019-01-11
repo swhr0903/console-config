@@ -92,6 +92,10 @@
     <logger name="manage" additivity="false" level="INFO">
         <appender-ref ref="manageAppender"/>
     </logger>
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="errorAppender"/>
+    </root>
 
     <!--异步到文件-->
     <!-- <appender name="asyncFileAppender" class="ch.qos.logback.classic.AsyncAppender">
