@@ -61,5 +61,3 @@ spring:
           starttls:
             enable: true
             required: true
-logging:
-  config: ../logback.xml
