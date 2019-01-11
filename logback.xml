@@ -39,7 +39,6 @@
         </rollingPolicy>  
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %level [%thread] %file:%line - %msg%n</pattern>
-            <charset>UTF-8</charset>
         </encoder>
     </appender>
 
@@ -56,7 +55,6 @@
         </rollingPolicy>  
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %level [%thread] %file:%line - %msg%n</pattern>
-            <charset>UTF-8</charset>
         </encoder>
     </appender>
 
@@ -73,7 +71,6 @@
         </rollingPolicy>  
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %level [%thread] %file:%line - %msg%n</pattern>
-            <charset>UTF-8</charset>
         </encoder>
         <!-- 下面为配置只输出error级别的日志 -->
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
@@ -92,6 +89,7 @@
     <logger name="manage" additivity="false" level="INFO">
         <appender-ref ref="manageAppender"/>
     </logger>
+
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="errorAppender"/>
