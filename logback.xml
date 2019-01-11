@@ -15,9 +15,9 @@
         <file>${LOGIN_LOG_PATH}/root-%d{yyyy-MM-dd}.log</file> 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
              <fileNamePattern>${LOGIN_LOG_PATH}/root-%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>  
-             <maxHistory>7</maxHistory>  
+             <maxHistory>14</maxHistory>  
              <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">  
-                 <maxFileSize>10MB</maxFileSize>  
+                 <maxFileSize>50MB</maxFileSize>  
              </timeBasedFileNamingAndTriggeringPolicy>  
         </rollingPolicy>  
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -46,7 +46,7 @@
     <appender name="login" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOGIN_LOG_PATH}/login-%d{yyyy-MM-dd}.log</file> 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
-             <fileNamePattern>${LOGIN_LOG_PATH}/login-%d{yyyy-MM-dd}.log.zip</fileNamePattern>  
+             <fileNamePattern>${LOGIN_LOG_PATH}/login-%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>  
              <maxHistory>14</maxHistory>  
              <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">  
                  <maxFileSize>50MB</maxFileSize>  
