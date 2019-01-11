@@ -87,6 +87,7 @@
         <appender-ref ref="error"/>
     </appender>
 
+
     <!--开发、测试、生产环境:打印控制台-->
     <springProfile name="dev">
         <root level="INFO">
@@ -95,7 +96,7 @@
             <appender-ref ref="root"/>
             <appender-ref ref="manage"/>
             <appender-ref ref="login"/>
-            <appender-ref ref="erro"/>
+            <appender-ref ref="error"/>
         </root>
     </springProfile>
     <springProfile name="test">
@@ -105,7 +106,7 @@
             <appender-ref ref="root"/>
             <appender-ref ref="manage"/>
             <appender-ref ref="login"/>
-            <appender-ref ref="erro"/>
+            <appender-ref ref="error"/>
         </root>
     </springProfile>
     <springProfile name="prod">
@@ -115,7 +116,7 @@
             <appender-ref ref="root"/>
             <appender-ref ref="manage"/>
             <appender-ref ref="login"/>
-            <appender-ref ref="erro"/>
+            <appender-ref ref="error"/>
         </root>
     </springProfile>
 
