@@ -78,7 +78,7 @@
     <springProfile name="dev">
         <root level="INFO">
             <appender-ref ref="CONSOLE"/>
-            <appender-ref ref="asyncFileAppender"/>
+            <appender-ref ref="app"/>
         </root>
     </springProfile>
 
