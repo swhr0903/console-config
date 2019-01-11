@@ -62,4 +62,4 @@ spring:
             enable: true
             required: true
 logging:
-  config: logback.xml
+  config: ../logback.xml
