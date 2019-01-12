@@ -1,6 +1,8 @@
 server:
   port: 8020
 spring:
+  profiles:
+    include: datasource
   datasource:
     druid:
       filters: config,stat,wall
@@ -69,4 +71,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8011/eureka/
-datasource: !include datasource.yml
