@@ -3,7 +3,7 @@ spring:
     druid:
       db1:
         filters: config,stat,wall
-        connect-properties: config.file=http://47.92.159.62/druid/druid-console.properties
+        connection-properties: config.file=http://47.92.159.62/druid/druid-console.properties
         url:
         username:
         password:
@@ -20,7 +20,7 @@ spring:
         max-pool-prepared-statement-per-connection-size: 20
       db2:
         filters: config,stat,wall
-        connect-properties: config.file=http://47.92.159.62/druid/druid-console-db2.properties
+        connection-properties: config.file=http://47.92.159.62/druid/druid-console-db2.properties
         url:
         username:
         password:
