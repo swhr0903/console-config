@@ -11,7 +11,8 @@ eureka:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8011/eureka/
 mq:
   host: 192.168.1.102
+  prot: 5672
   userName: qq
   password: 1234
   virtualHost: /qq
-  exchageName: exchage
+
