@@ -1,3 +1,9 @@
 spring:
   profiles:
     include: datasource
+mq:
+  host: 192.168.1.102
+  userName: qq
+  password: 1234
+  virtualHost: /qq
+  exchageName: exchage
