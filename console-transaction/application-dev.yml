@@ -1,6 +1,14 @@
 spring:
   profiles:
     include: datasource
+  security:
+    user:
+      name: frank
+      password: aa000000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8011/eureka/
 mq:
   host: 192.168.1.102
   userName: qq
