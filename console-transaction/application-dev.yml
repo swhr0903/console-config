@@ -1,6 +1,6 @@
 spring:
   profiles:
-    include: datasource
+    include: datasource,redis
   security:
     user:
       name: frank
