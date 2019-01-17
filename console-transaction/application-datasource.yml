@@ -3,7 +3,7 @@ spring:
     druid:
       filters: config,stat,wall
       connection-properties: config.file=http://47.92.159.62/druid/druid-console-mycat.properties
-      driverClassName: com.mysql.jdbc.Driver
+      driver-class-name: com.mysql.jdbc.Driver
       url:
       username:
       password:
