@@ -4,7 +4,7 @@ spring:
   datasource:
     druid:
       filters: config,stat,wall
-      connection-properties: config.file=http://47.92.159.62/druid/druid-console-mycat.properties
+      connect-properties: config.file=http://47.92.159.62/druid/druid-console-mycat.properties
       url:
       username:
       password:
@@ -19,8 +19,6 @@ spring:
       test-on-return: false
       pool-prepared-statements: true
       max-pool-prepared-statement-per-connection-size: 20
-  #profiles:
-    #include: datasource
   redis:
     host: 47.92.159.62
     port: 6379
