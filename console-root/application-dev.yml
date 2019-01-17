@@ -19,8 +19,8 @@ spring:
       test-on-return: false
       pool-prepared-statements: true
       max-pool-prepared-statement-per-connection-size: 20
-  profiles:
-    include: datasource
+  #profiles:
+    #include: datasource
   redis:
     host: 47.92.159.62
     port: 6379
