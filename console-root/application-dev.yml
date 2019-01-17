@@ -1,6 +1,24 @@
 server:
   port: 8020
 spring:
+  datasource:
+    druid:
+      filters: config,stat,wall
+      connection-properties: config.file=http://47.92.159.62/druid/druid-console-mycat.properties
+      url:
+      username:
+      password:
+      initial-size: 1
+      min-idle: 1
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
   profiles:
     include: datasource
   redis:
