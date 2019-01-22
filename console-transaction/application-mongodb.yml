@@ -1,0 +1,20 @@
+mongodb:
+  socket-keep-alive: true
+spring:
+  data:
+    mongodb:
+      port: 27017
+      #username: root
+      #password: root
+      #authentication-database: admin
+      connect-timeout: 5000
+      connections-per-host: 10
+      database: testdb
+      heartbeat-connect-timeout: 10000
+      heartbeat-frequency: 2000
+      heartbeat-socket-timeout: 10000
+      host: 192.168.1.122
+      max-wait-time: 1500
+      socket-timeout: 0
+      threads-allowed-to-block-for-connection-multiplier: 5
+      write-concern: SAFE
