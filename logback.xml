@@ -31,7 +31,39 @@
     <appender name="manageAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${MAMAGE_LOG_PATH}/manage.log</file> 
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
-             <fileNamePattern>${LOGIN_LOG_PATH}/manage-%d{yyyy-MM-dd}-%i.log.zip</fileNamePattern>  
+             <fileNamePattern>${MAMAGE_LOG_PATH}/manage-%d{yyyy-MM-dd}-%i.log.zip</fileNamePattern>  
+             <maxHistory>14</maxHistory>  
+             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">  
+                 <maxFileSize>50MB</maxFileSize>  
+             </timeBasedFileNamingAndTriggeringPolicy>  
+        </rollingPolicy>  
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %level [%thread] %file:%line - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <!-- tx日志 -->
+    <property name="TX_LOG_PATH" value="logs/manage"/>
+    <appender name="txAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${MAMAGE_LOG_PATH}/tx.log</file> 
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+             <fileNamePattern>${TX_LOG_PATH}/tx-%d{yyyy-MM-dd}-%i.log.zip</fileNamePattern>  
+             <maxHistory>14</maxHistory>  
+             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">  
+                 <maxFileSize>50MB</maxFileSize>  
+             </timeBasedFileNamingAndTriggeringPolicy>  
+        </rollingPolicy>  
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] %level [%thread] %file:%line - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <!-- mq日志 -->
+    <property name="MQ_LOG_PATH" value="logs/manage"/>
+    <appender name="txAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${MAMAGE_LOG_PATH}/mq.log</file> 
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">  
+             <fileNamePattern>${MQ_LOG_PATH}/mq-%d{yyyy-MM-dd}-%i.log.zip</fileNamePattern>  
              <maxHistory>14</maxHistory>  
              <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">  
                  <maxFileSize>50MB</maxFileSize>  
