@@ -1,4 +1,5 @@
 spring:
+  port: 8022
   profiles:
     include: datasource,redis
   security:
