@@ -19,3 +19,6 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8011/eureka/
+grpc:
+  server:
+    port: 0
