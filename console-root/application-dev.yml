@@ -48,5 +48,3 @@ grpc:
       enableKeepAlive: true
       keepAliveWithoutCalls: true
       negotiationType: plaintext
-  RoleService:
-    address: static://localhost:42620
