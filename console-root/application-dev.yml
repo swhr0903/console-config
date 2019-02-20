@@ -48,3 +48,5 @@ grpc:
       enableKeepAlive: true
       keepAliveWithoutCalls: true
       negotiationType: plaintext
+swagger:
+  base-package: com.cloud.console.contorller
