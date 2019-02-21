@@ -2,7 +2,7 @@ server:
   port: 8021
 spring:
   profiles:
-    include: datasource,redis
+    include: datasource,redis,swagger
   servlet:
     multipart:
       enabled: true
@@ -22,5 +22,3 @@ eureka:
 grpc:
   server:
     port: 0
-swagger:
-  base-package: com.cloud.console.contorller
