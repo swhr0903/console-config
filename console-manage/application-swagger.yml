@@ -1,13 +1,14 @@
-swagger:
-  enabled: true
-  licenseUrl: https://www.apache.org/licenses/LICENSE-2.0.html
-  license: Apache License, Version 2.0
-  termsOfServiceUrl: https://github.com/dyc87112/spring-boot-starter-swagger
-  contact:
-    name: frank
-    url: http://www.frank.com
-    email: 3208381562@qq.com
-  description: Starter for swagger 2.x
-  base-package: com.cloud.console.controller
-  title: spring-boot-starter-swagger
-  version: 1.1.0.RELEASE
+spring:
+  swagger:
+    enabled: true
+    licenseUrl: https://www.apache.org/licenses/LICENSE-2.0.html
+    license: Apache License, Version 2.0
+    termsOfServiceUrl: https://github.com/dyc87112/spring-boot-starter-swagger
+    contact:
+      name: frank
+      url: http://www.frank.com
+      email: 3208381562@qq.com
+    description: Starter for swagger 2.x
+    base-package: com.cloud.console.controller
+    title: spring-boot-starter-swagger
+    version: 1.1.0.RELEASE
