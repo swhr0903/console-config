@@ -2,7 +2,7 @@ server:
   port: 8020
 spring:
   profiles:
-    include: datasource,redis
+    include: datasource,redis,swagger
   freemarker:
     allow-request-override: false
     allow-session-override: false
@@ -48,5 +48,3 @@ grpc:
       enableKeepAlive: true
       keepAliveWithoutCalls: true
       negotiationType: plaintext
-swagger:
-  base-package: com.cloud.console.contorller
