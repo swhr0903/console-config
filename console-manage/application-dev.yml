@@ -22,3 +22,8 @@ eureka:
 grpc:
   server:
     port: 0
+springfox:
+  documentation:
+    swagger:
+      v2:
+        host: /manage//v2/api-docs
