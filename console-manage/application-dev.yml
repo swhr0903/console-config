@@ -26,4 +26,4 @@ springfox:
   documentation:
     swagger:
       v2:
-        host: /manage//v2/api-docs
+        host: /manage/v2/api-docs
