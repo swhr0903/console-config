@@ -2,7 +2,7 @@ server:
   port: 8023
 spring:
   profiles:
-    include: datasource,redis,swagger
+    include: datasource,redis
   servlet:
     multipart:
       enabled: true
