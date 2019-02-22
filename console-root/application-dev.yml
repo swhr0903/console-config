@@ -2,7 +2,7 @@ server:
   port: 8020
 spring:
   profiles:
-    include: datasource,redis,swagger
+    include: datasource,redis
   freemarker:
     allow-request-override: false
     allow-session-override: false
