@@ -2,7 +2,7 @@ spring:
   datasource:
     druid:
       filters: config,stat,wall
-      connection-properties: config.file=http://127.0.0.1/druid/druid-console-mycat.properties
+      connection-properties: config.file=http://127.0.0.1/druid-pool.properties
       url:
       username:
       password:
